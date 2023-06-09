@@ -1,0 +1,29 @@
+<a class="btn btn-primary" routerLink="/admin/product-create">Create New</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="text-align: center;">STT</th>
+      <th scope="col" style="text-align: center;">Name</th>
+      <th scope="col" style="text-align: center;">Price</th>
+      <th scope="col" style="text-align: center;">Description</th>
+      <th scope="col" style="text-align: center;">Image</th>
+      <th scope="col" style="text-align: center;">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.description }}</td>
+      <td><img style="width: 54px; height: 54px;" src="{{ product.imgUrl }}" /></td>
+      <td style="display: flex;">
+        <a style="width: 80px; height: 60px; margin-right: 20px; padding-left: 8px; text-align: center;"
+          class="btn btn-secondary" [routerLink]="'/admin/product-detail/' + product.id">View Detail</a>
+        <button class="btn btn-danger" (click)="delete(product.id!)">Xóa</button>
+        <a style="width: 74px; padding-top: 20px; margin-left: 20px;" class="btn btn-success"
+          [routerLink]="'/admin/products-update/' + product.id">Update</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

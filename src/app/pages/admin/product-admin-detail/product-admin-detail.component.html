@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngIf="product">
+    <h2>{{ product.name }}</h2>
+    <p>Giá: {{ product.price }}</p>
+    <p>Mô tả: {{ product.description }}</p>
+    <img src="{{product.imgUrl}}" style="width: 300px;" />
+  </div>
+</div>

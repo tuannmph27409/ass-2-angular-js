@@ -1,0 +1,197 @@
+<main class="chinh container ">
+  <div class="mmenuu">
+    <div class="chu fs-1">
+      <a href="/" class="logo"><span>BTS 2023</span></a>
+
+    </div>
+
+    <!-- <div class="menu2">
+      <nav class="navbar navbar-expand-lg">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">giày nam</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Giày nữ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sneaker</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div> -->
+
+
+    <div class="">
+
+      <form class="d-flex" (ngSubmit)="onSubmit() ">
+
+        <input class="my-4" type="text" name="my-search" placeholder="Search" aria-label="Search" [(ngModel)]="search"
+          required>
+
+
+        <button class="btn btn-outline-success my-4" type="submit"> <i class="fas fa-search fs-3"></i></button>
+      </form>
+      <div class="" *ngIf="product && product.length ==0">không tìm thấy sản phẩm</div>
+    </div>
+  </div>
+  <div>
+    <div class="row" *ngIf="product && product.length; ">
+      <div class="col-4" *ngFor="let p of product" style="margin-top: 80px;">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <a href="product/{{p.id}}">
+              <img src="{{ p.imgUrl }}" alt="" class="card-img-top" />
+            </a>
+            <h5 class="card-title">{{ p.name }}</h5>
+            <p class="card-text">Giá: {{ p.price }}</p>
+            <p class="card-text">Mô tả sản phẩm: {{ p.description }}</p>
+            <div class="text-sm-start">
+              <button type="button" class="btn btn-danger" style="width: 100px; justify-content: center;">Mua</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mmenuu">
+    <h2 style="color: blue">Sale</h2>
+  </div>
+
+
+
+  <div class="new-item">
+    <div class="item">
+      <div class="item-img">
+        <img src="assets/image/product6.webp" alt="">
+
+        <div class="buton2">
+          <button type="button" class="btn btn-danger">mua san pham</button>
+        </div>
+      </div>
+      <div class="item-text">
+        <a href="">Chuck Taylor All Star Peace Hi Top</a>
+        <div class="d-flex me-auto">
+          <p class="me-auto"><span>600 đ</span> </p>
+          <p class="me-auto"><del>100000 d</del> </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="item">
+      <div class="item-img">
+        <img src="assets/image/product7.webp" alt="">
+
+        <div class="buton2">
+          <button type="button" class="btn btn-danger">mua san pham</button>
+        </div>
+      </div>
+      <div class="item-text">
+        <a href="">Chuck Taylor All Star Peace Hi Top</a>
+        <div class="d-flex me-auto">
+          <p class="me-auto"><span>600 đ</span> </p>
+          <p class="me-auto"><del>100000 d</del> </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="item">
+      <div class="item-img">
+        <img src="assets/image/product8.webp" alt="">
+
+        <div class="buton2">
+          <button type="button" class="btn btn-danger">mua san pham</button>
+        </div>
+      </div>
+      <div class="item-text">
+        <a href="">Chuck Taylor All Star Peace Hi Top</a>
+        <div class="d-flex me-auto">
+          <p class="me-auto"><span>600 đ</span> </p>
+          <p class="me-auto"><del>100000 d</del> </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="item">
+      <div class="item-img">
+        <img src="assets/image/product6.webp" alt="">
+
+        <div class="buton2">
+          <button type="button" class="btn btn-danger">mua san pham</button>
+        </div>
+      </div>
+      <div class="item-text">
+        <a href="">Chuck Taylor All Star Peace Hi Top</a>
+        <div class="d-flex me-auto">
+          <p class="me-auto"><span>600 đ</span> </p>
+          <p class="me-auto"><del>100000 d</del> </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="item">
+      <div class="item-img">
+        <img src="assets/image/product6.webp" alt="">
+
+        <div class="buton2">
+          <button type="button" class="btn btn-danger">mua san pham</button>
+        </div>
+      </div>
+      <div class="item-text">
+        <a href="">Chuck Taylor All Star Peace Hi Top</a>
+        <div class="d-flex me-auto">
+          <p class="me-auto"><span>600 đ</span> </p>
+          <p class="me-auto"><del>100000 d</del> </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="item">
+      <div class="item-img">
+        <img src="assets/image/product6.webp" alt="">
+
+        <div class="buton2">
+          <button type="button" class="btn btn-danger">mua san pham</button>
+        </div>
+      </div>
+      <div class="item-text">
+        <a href="">Chuck Taylor All Star Peace Hi Top</a>
+        <div class="d-flex me-auto">
+          <p class="me-auto"><span>600 đ</span> </p>
+          <p class="me-auto"><del>100000 d</del> </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <section id="home-section">
+    <div class="container">
+      <div class="row" *ngIf="products && products.length; else elseBlock">
+        <div class="col-4" *ngFor="let product of products | paginate: { itemsPerPage: 6, currentPage: p }"
+          style="margin-top: 40px; padding-left: 20px; padding-bottom: 40px;">
+          <div class="card" style="width: 18rem">
+            <div class="card-body" style="height: 450px;">
+              <a href="product/{{product.id}}">
+                <img src="{{ product.imgUrl }}" alt="" class="card-img-top" />
+              </a>
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">Giá: {{ product.price }} đ</p>
+              <p class="card-text">Mô tả sản phẩm: {{ product.description }}</p>
+              <div class="text-sm-start">
+                <button type="button" class="btn btn-danger" style="width: 100px; justify-content: center;">Mua</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls>
+      <ng-template #elseBlock>Không tìm thấy sản phẩm!</ng-template>
+    </div>
+  </section>
+
+</main>

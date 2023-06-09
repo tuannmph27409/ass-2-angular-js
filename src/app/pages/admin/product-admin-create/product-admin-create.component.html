@@ -1,0 +1,56 @@
+<!-- <div class="container">
+  <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+    <input type="text" formControlName="name" />
+    <input type="number" formControlName="price" />
+    <textarea type="text" formControlName="description" style="width: 50px; height: 50px;"></textarea>
+    <img type="file" formControlName="imgUrl" />
+    <button type="submit">Thêm</button>
+  </form>
+</div> -->
+
+<!-- Code tại đây -->
+<div class="container form-text">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>ADD NEW PRODUCT</h1>
+    </div>
+    <div class="col-sm-12">
+      <!-- Form Thêm sản phẩm -->
+      <form method="post" [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+        <!-- Tên sản phẩm -->
+        <div class="form-group">
+          <label for="txtname"> PRODUCT NAME</label>
+          <input class="form-control" id="txtname" type="text" name="txtname" formControlName="name">
+        </div>
+        <!-- Giá sản phẩm -->
+        <div class="form-group">
+          <label for="txtprice">PRODCUT PRICE</label>
+          <input class="form-control" type="number" id="txtprice" name="txtprice" formControlName="price">
+        </div>
+        <!-- Mô tả sản phẩm -->
+        <div class="form-group">
+          <label for="txtdesc">PRODUCT DESCRIPTION</label>
+          <textarea class="form-control" type="text" id="txtdesc" name="txtdesc" rows="3"
+            formControlName="description"></textarea>
+        </div>
+        <!-- Loại sản phẩm -->
+        <div class="form-group">
+          <label>CATEGORY</label>
+          <select class="form-control" name="txtcateid">
+            <option value="" selected>-- CATEGORY --</option>
+          </select>
+        </div>
+        <!-- Loại sản phẩm -->
+        <div class="form-group">
+          <label for="txtpic">IMAGE</label>
+          <div class="custom-file">
+            <textarea class="form-control" type="text" id="txtdesc" name="txtdesc" formControlName="imgUrl"></textarea>
+            <!-- <input type="file" id="txtpic" name="txtpic" accept=".png,.gif,.jpg,.jpeg" formControlName="imgUrl"> -->
+            <!-- <label class="custom-file-label" for="txtpic">Chọn hình</label> -->
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" name="btnsubmit">ADD NEW PRODUCT</button>
+      </form>
+    </div>
+  </div>
+</div>

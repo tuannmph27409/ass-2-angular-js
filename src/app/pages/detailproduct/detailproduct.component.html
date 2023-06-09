@@ -1,0 +1,72 @@
+<div class="container mx-auto">
+  <div class="my-5 mx-5">
+    <div class="container ">
+      <div class="row">
+        <div class="col text-center">
+          <div class="border-end me-4 border-black">
+            <img src="{{ products.imgUrl }}" alt="" width="50%" class="border border-secondary rounded">
+          </div>
+        </div>
+        <div class="col">
+          <p class="text-sm-start text-danger fs-3"> {{products.price}} đ</p>
+          <h2 class="text-sm-start">
+            {{products.name}}
+          </h2>
+          <div>
+            <p class="text-sm-start"> Mô tả: {{products.description}}</p>
+          </div>
+          <div>
+            <p>số lượng</p>
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" class="btn btn-outline-primary">-</button>
+              <input class="text-sm-center" type="text" value="1" style="width: 50px;">
+              <button type="button" class="btn btn-outline-primary">+</button>
+            </div>
+          </div>
+
+          <div class="text-sm-start mt-2">
+            <button type="button" class="btn btn-outline-danger me-3">thêm vào giỏ hàng</button>
+            <button type="button" class="btn btn-outline-danger me-3">Mua</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <div class="p-3 mb-2 " style="background-color: #F2F2F2;">
+        <h2 class='text-danger text-center'>ĐẶC ĐIỂM NỔI BẬT</h2>
+        <p>Vậy sản phẩm có gì nổi bật, giá bao nhiêu và
+          liệu
+          có nên mua không? Tìm hiểu ngay nhé!</p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class=''>
+      <h3 style="margin-bottom: 20px;">Sản phẩm tương tự</h3>
+      <div class="binhluan rounded border"></div>
+    </div>
+    <br>
+    <br>
+    <div class=''>
+      <h3 style="margin-bottom: 20px;">Bình luận</h3>
+      <div class="rounded border">
+        <div *ngFor="let comment of comments">
+          {{ comment.content }}
+          <hr>
+        </div>
+        <!-- <ul>
+
+          <li *ng ="let comment of comments">{{ comment.content }}</li>
+        </ul> -->
+        <form (ngSubmit)="onSubmit()">
+          <div>
+            <input type="text" [(ngModel)]="content" name="content" required placeholder="comment" style="width: 92%;">
+            <button type="submit" class="btn-outline-danger">comment</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,92 @@
+/* // .chinh{
+    //     padding: 20px 20px;
+    // }
+    // .chinh{
+    //     padding-top:16px;
+    //     padding-bottom:78px;
+    //     padding-left:134px;
+    //     padding-right:134px;
+    // } */
+    .mmenuu{
+        display: flex;
+        justify-content:space-between ;
+        justify-items: center;
+        margin: 20px 40px;
+    }
+    .mmenuu button{
+        margin: 20px 0px;
+    }
+    .mmenuu .chu{
+        margin: 20px 0px;
+    }
+    .mmenuu .chu a{
+        color: red;
+        font-weight: 700;
+    }
+    .mmenuu .menu2{
+        margin: 20px 0px;
+    }
+    .menu2 a{
+        color: black;
+    }
+    .menu2 a:hover{
+        color: red;
+    }
+    .new-item{
+        margin: 20px 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+    }
+    .item-text a{
+      text-decoration: none;
+      color: black;
+    }
+    .item-text span{
+        color: red;
+      }
+    .item-text a:hover{
+        color: red;
+    }
+    
+    .item{
+        /* // border: 1px solid black; */
+        padding: 10px;
+        overflow: hidden;
+        height: 300px;
+    }
+    .item-img{
+        overflow: hidden;
+         /* border: 1px solid black; */
+        height: 180px;
+    }
+    .item-img img{
+         display: inline-block;
+        vertical-align: middle;
+         width: 100%;
+        height: 100%;
+    }
+    /* // .item img{
+       
+    //     display: inline-block;
+    //     vertical-align: middle;
+    //      width: 100%;
+    //     height: 70%;
+    // } */
+    .buton2 button{
+        width: 100%;
+    }
+    .buton2 button:hover{
+        color: red;
+        background-color: white;
+        border: 1px solid red;
+    }
+    .buton2{
+        transform: translateY(60px);
+        transition: 0.2s;
+        height: 40px;
+        line-height: 40px;
+    }
+    .item:hover .buton2{
+        transform: translateY(-50px);
+    }

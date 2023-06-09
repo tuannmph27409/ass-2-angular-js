@@ -1,0 +1,38 @@
+<!-- <section id="sidebar-section">
+  <h2>Ten cong ty</h2>
+  <ul>
+    <li><a routerLink="product-list">Dashboard</a></li>
+  </ul>
+</section> -->
+<div class="container">
+  <div class="row">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand  text-danger fs-1" routerLink="/admin">Street <span>wear</span></a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+    <div class="col-md-3 bg-info ">
+      <div class="sidebar row gy-1">
+        <ul class="px-4 text-center row gy-5">
+          <div>
+            <a routerLink="/admin" class="list-group-item py-3 ">Doashboard</a>
+          </div>
+          <div>
+            <a routerLink="/admin/product-list" class="list-group-item py-3">Product-List</a>
+          </div>
+          <div>
+
+            <a routerLink="/admin/register-list" class="list-group-item py-3">User-List</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="main">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

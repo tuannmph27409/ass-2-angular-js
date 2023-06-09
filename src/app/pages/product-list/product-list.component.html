@@ -1,0 +1,23 @@
+<section id="home-section">
+  <div class="container">
+    <div class="row" *ngIf="products && products.length; else elseBlock">
+      <div class="col-4" *ngFor="let product of products | paginate: { itemsPerPage: 6, currentPage: p }" style="margin-top: 40px; padding-left: 40px; padding-bottom: 40px;">
+        <div class="card" style="width: 18rem">
+          <div class="card-body" style="height: 524px;">
+            <a href="product/{{product.id}}">
+              <img src="{{ product.imgUrl }}" alt="" class="card-img-top" />
+            </a>
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">Giá: {{ product.price }} đ</p>
+            <p class="card-text">Mô tả sản phẩm: {{ product.description }}</p>
+            <div class="text-sm-start">
+              <button type="button" class="btn btn-danger" style="width: 100px; justify-content: center;">Mua</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pagination-controls style="text-align: center;" (pageChange) = "p = $event"></pagination-controls>
+    <ng-template #elseBlock>Không tìm thấy sản phẩm!</ng-template>
+  </div>
+</section>
